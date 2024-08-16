@@ -12,7 +12,7 @@ const CounterHome = () => {
                 Our <span>Work</span>
               </h3>
               <p>
-                Lorem Ipsum is simply dummy text of the printing and typesetting
+                Lorem  simply dummy text of the printing and typesetting
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s
               </p>
