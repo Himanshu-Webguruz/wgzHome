@@ -19,7 +19,7 @@ const techMain = [
     },
     {
       img: tech,
-      title: "Marketing  <span> Analitics & Optimization</span>",
+      title: "Marketing <span> Analitics & Optimization</span>",
       para: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut dignissim facilisis ornare.Suspendisse commodo, ipsum nec pellentesque vulputate, velit nisl interdum tellus, in mollis lectus tortor ut neque. Cras faucibus arcu in sem scelerisque euismod. Integer non efficitur erat.",
       img1: constrant,
       img2: salesforce,

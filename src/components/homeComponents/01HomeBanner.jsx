@@ -6,7 +6,7 @@ const HomeBanner = () => {
         <div className="container">
           <div className="row">
             <div className="col-sm-12 col-xs-12 video-banner">
-              {/* <video
+              <video
                 autoPlay
                 muted
                 loop
@@ -16,7 +16,7 @@ const HomeBanner = () => {
               >
                 <source src="/video/baner-video.mp4" type="video/mp4" />
                 Your browser does not support the video tag.
-              </video> */}
+              </video>
             </div>
             <div className="col-sm-8 col-xs-12 banner-content">
               <h1>

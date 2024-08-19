@@ -40,7 +40,7 @@ const CustomizeHome = () => {
           <div className="row">
             <div className="col-sm-12 col-xs-12 heading-main text-center mb-5">
               <h3>
-                A Unified Vision That Caters To{" "}
+                A Unified Vision That Caters To
                 <span>Diverse Industry Demands</span>
               </h3>
             </div>

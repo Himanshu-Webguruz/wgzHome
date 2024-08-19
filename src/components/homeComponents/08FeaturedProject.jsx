@@ -54,7 +54,7 @@ const AppData = [
                 <div className="featured-right-content">
                   <h4 className="color-wt">Vorides</h4>
                   <p className="color-wt mb-4">
-                    Vorides is Cameroon’s safest and most affordable intercity and
+                    Vorides is Camerofest and most affordable intercity and
                     Intra-city ride-sharing platform.
                   </p>
                   <ul className="icon-content-main pb-4">
