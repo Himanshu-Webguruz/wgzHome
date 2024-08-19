@@ -51,8 +51,8 @@ const Featuredblog = () => {
           <div className="row">
             <div className="col-sm-6 col-xs-12 blog-sub left">
               {Blogcontent.map((Blogcont, index) => (
-                <div className="blog-card">
-                  <div className="blogimage" key={index}>
+                <div className="blog-card" key={index}>
+                  <div className="blogimage">
                     <Image
                       src={Blogcont.img}
                       alt=""
@@ -71,8 +71,8 @@ const Featuredblog = () => {
             </div>
             <div className="col-sm-6 col-xs-12 blog-sub right">
               {righttblog.map((Blogcont, index) => (
-                <div className="blog-card">
-                  <div className="blogimage" key={index}>
+                <div className="blog-card" key={index}>
+                  <div className="blogimage">
                     <Image
                       src={Blogcont.img}
                       alt=""
