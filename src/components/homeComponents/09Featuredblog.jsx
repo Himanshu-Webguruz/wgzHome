@@ -48,7 +48,7 @@ const Featuredblog = () => {
               </p>
             </div>
           </div>
-          <div className="row">
+          <div className="row blog-card-content">
             <div className="col-sm-6 col-xs-12 blog-sub left">
               {Blogcontent.map((Blogcont, index) => (
                 <div className="blog-card" key={index}>

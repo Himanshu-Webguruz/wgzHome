@@ -138,13 +138,13 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        <div className="row py-4 border-botm">
+        <div className="row py-4 border-botm d-flex align-items-center">
           <div className="col-sm-4 col-xs-12 footer-bottom left">
-            <p>Statutory legal information</p>
+            <p className="mb-0">Statutory legal information</p>
           </div>
           <div className="col-sm-4 col-xs-12 footer-bottom social-icons">
-            <ul className="d-flex">
-              <li>
+            <ul className="d-flex align-items-center justify-content-center">
+              <li className="px-2">
                 <a
                   href="https://www.facebook.com/webguruztechnologies/"
                   target="_blank"
@@ -154,7 +154,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faFacebook} height={20} />
                 </a>
               </li>
-              <li>
+              <li className="px-2">
                 <a
                   href="https://twitter.com/Webguruz"
                   target="_blank"
@@ -164,7 +164,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faXTwitter} height={20} />
                 </a>
               </li>
-              <li>
+              <li className="px-2">
                 <a
                   href="https://www.linkedin.com/company/webguru-technologies-pvt.-ltd./"
                   target="_blank"
@@ -174,7 +174,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faLinkedin} height={20} />
                 </a>
               </li>
-              <li>
+              <li className="px-2">
                 <a
                   href="https://www.instagram.com/webguruz"
                   target="_blank"
@@ -184,7 +184,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faInstagram} height={20} />
                 </a>
               </li>
-              <li>
+              <li className="px-2">
                 <a
                   href="https://www.youtube.com/channel/UC-xaX1FJWj40ED-cTm2Lq6w"
                   target="_blank"
@@ -194,7 +194,7 @@ const Footer = () => {
                   <FontAwesomeIcon icon={faYoutube} height={20} />
                 </a>
               </li>
-              <li>
+              <li className="px-2">
                 <a
                   href="https://in.pinterest.com/webguruz/"
                   target="_blank"
@@ -213,7 +213,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="row">
+        <div className="row copyright-btm" >
           <div className="col-sm-7 col-xs-12 copyright">
             <p>
               Copyright @ 2024 Webguruz Technologies Private Limited. || All

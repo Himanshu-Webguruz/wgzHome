@@ -30,7 +30,7 @@ ul{
     font-weight:400;
     font-family: var(--font-inter);
   }
-  span{
+  span, .right-privacy ul li a:hover{
     color: #25C1D5;
   }
 h4, h3{
@@ -243,17 +243,9 @@ form.website-label input[type="text"]::placeholder {
     display: flex;
     justify-content: space-between;
 }
-
-
 .animate-charcter
 {
-  background-image: linear-gradient(
-    -225deg,
-    #25C1D5 0%,
-    #75b6bf 29%,
-    #19737f 67%,
-    #5dc9d7 100%
-  );
+  background-image: linear-gradient(-225deg, #25C1D5 0%,#75b6bf 29%,#19737f 67%,#5dc9d7 100% );
   background-size: 200% auto;
   color: #fff;
   background-clip: text;
@@ -269,8 +261,7 @@ form.website-label input[type="text"]::placeholder {
     max-width: 70%;
     margin: auto;
 }
-.counter-main::before,
-.number-main::before, .featured-blog::before{
+.counter-main::before,.number-main::before, .featured-blog::before{
     content: "";
     position: absolute;
     left: 0;
@@ -291,7 +282,6 @@ form.website-label input[type="text"]::placeholder {
     display: flex;
     flex-direction: column;
 }
-
 .counter-main label p {
     margin: 0px;
     padding: 12px 0px;
@@ -339,7 +329,6 @@ form.website-label input[type="text"]::placeholder {
     color: #fff;
 }
 /* tabing start */
-
 .heading-main h3 {
     font-size: 34px;
     line-height: 48px;
@@ -458,6 +447,7 @@ form.website-label button {
     color: #fff;
     border-radius: 0px 50px 50px 0px;
     transition: 0.3s ease-in-out 0s;
+    overflow: hidden;
 }
 
 a.about-btn svg {
@@ -1018,7 +1008,23 @@ form.contact-right-form button {
 img.center-img {
     max-width: 400px;
 }
-
+.blog-sub.left .blog-content {
+    width: 60%;
+}
+.blog-sub.left .blogimage {
+    width: 40%;
+}
+.footer-bottom.social-icons ul li a:hover svg{
+    transform: translateY(-2px);
+}
+.footer-bottom.social-icons ul li a:hover svg path {
+    fill: #168b9a;
+}
+.footer-bottom.social-icons ul li svg {
+    width: 20px;
+    height: 20px;
+    transition: 0.3s ease-in-out 0s;
+}
 /* animations */
 @keyframes draw {
     to {
@@ -1214,22 +1220,41 @@ button.navbar-toggler:focus {
             align-items: flex-start !important;
         }
         header.onScroll .navigation-main{
-            position: static;
+            position: absolute;
         }
         ul.logos-main img {
             max-width: 55px;
         }
+        .right-privacy ul li a {
+            padding: 0px 10px 0px 0px;
+        }
+        .contact-info-sub .icon {
+            width: 46px;
+            height: 46px;
+        }
+        .contact-info-sub .icon svg {
+            font-size: 17px !important;
+        }
+        .contact-info-sub {
+            padding: 7px 3px 11px 62px;
+        }
+
     }
 @media(max-width: 767px){
-.image-content, .card-content, .technical-main .row:nth-child(2n+1) .card-content {
+.image-content, .card-content, .technical-main .row:nth-child(2n+1) .card-content,
+.blog-card-content,.blog-sub >div {
     flex-direction: column;
+}
+.blog-sub, .blog-sub >div{
+    width: 100%;
+}
+.blog-sub.left .blogimage, .blog-sub.left .blog-content {
+    width: 100%;
 }
 .address-card img{
     max-width: 194px;
 }
-.tab-main .content, .tab-main .image-content .image {
-    width: 100%;
-}
+
 img.voridelogo {
     top: auto;
     bottom: 10px;
@@ -1240,7 +1265,6 @@ img.voridelogo {
 .video-banner video, .home-banner {
     min-height: 86vh;
 }
-
 .blog-content{
     padding: 20px 0px 0px;
 }
@@ -1249,6 +1273,8 @@ img.voridelogo {
 }
 .navtestimonial {
     padding: 0px 10px;
+    max-width: 320px;
+    margin: auto;
 }
 .navtestimonial .slick-list {
     margin: 0px 0px;
@@ -1284,7 +1310,7 @@ form.website-label button {
 .counter-main label span {
     font-size: 50px;}
     ul#uncontrolled-tab-example li {
-        width: 100%;
+        width: 47%;
     }
     ul#uncontrolled-tab-example li button {
         font-size: 16px;
@@ -1299,6 +1325,7 @@ form.website-label button {
 .tab-main .image-content .image,
 .address-card {
     margin-bottom: 25px;
+    width: 100%;
 }
 .heading-main h3 {
     font-size: 24px;
@@ -1339,10 +1366,13 @@ ul.icon-content-main li {
     width: 48%;
 }
 .testimonial-main button.slick-arrow {
-    width: 64px;
-    background-size: 64px;
+    width: 52px;
+    background-size: 36px;
     height: 50px;
-    transform: translateX(80px);
+    transform: translateX(30px);
+}
+.testimonial-main button.slick-arrow.slick-prev{
+    transform: translateX(-30px); 
 }
 form.contact-right-form {
     padding: 20px;
@@ -1361,7 +1391,19 @@ form.website-label input {
 .slider-thumbnail .slick-track {
     padding: 50px 0px 50px;
 }
-
+.copyright-btm {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.bottom-right-img {
+    max-width: 320px;
+    margin: auto;
+    padding: 16px 0px 0px;
+}
+.footer-bottom.left p {
+    text-align: center;
+}
 }
 @media(max-width: 575px){
     .counter-main .row {
