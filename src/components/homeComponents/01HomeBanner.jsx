@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useState, useRef } from "react";
 
 const HomeBanner = () => {
@@ -58,57 +58,55 @@ const HomeBanner = () => {
 
     // If valid, console the website value
     console.log(`Website entered: ${website}`);
-    setWebsite("")
+    setWebsite("");
   };
 
   return (
-    <div>
-      <section className="home-banner d-flex align-items-center">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 col-xs-12 video-banner">
-              <video
-                autoPlay
-                muted
-                loop
-                preload="auto"
-                width={"100%"}
-                playsInline
-              >
-                <source src="/video/baner-video.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            </div>
-            <div className="col col-sm-8 col-xs-12 banner-content">
-              <h1>
-                A{" "}
-                <span className="animate-charcter">
-                  Website & Mobile App Development Company
-                </span>{" "}
-                with You in Mind
-              </h1>
-              <p>Innovative Digital Solutions to Fuel your Growth</p>
-              <form className="website-label">
-                <input
-                  type="text"
-                  placeholder="Enter your Website"
-                  value={website}
-                  onChange={handleWebsiteChange}
-                  onBlur={handleWebsiteBlur}
-                  ref={websiteRef}
-                />
-                {errors.website && (
-                  <p style={{ color: "red" }}>{errors.website}</p>
-                )}
-                <button type="button" onClick={handleButtonClick}>
-                  Send me a proposal
-                </button>
-              </form>
-            </div>
+    <section className="home-banner d-flex align-items-center">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-xs-12 video-banner">
+            <video
+              autoPlay
+              muted
+              loop
+              preload="auto"
+              width={"100%"}
+              playsInline
+            >
+              <source src="/video/baner-video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div className="col col-sm-8 col-xs-12 banner-content">
+            <h1>
+              A{" "}
+              <span className="animate-charcter">
+                Website & Mobile App Development Company
+              </span>{" "}
+              with You in Mind
+            </h1>
+            <p>Innovative Digital Solutions to Fuel your Growth</p>
+            <form className="website-label">
+              <input
+                type="text"
+                placeholder="Enter your Website"
+                value={website}
+                onChange={handleWebsiteChange}
+                onBlur={handleWebsiteBlur}
+                ref={websiteRef}
+              />
+              {errors.website && (
+                <p style={{ color: "red" }}>{errors.website}</p>
+              )}
+              <button type="button" onClick={handleButtonClick}>
+                Send me a proposal
+              </button>
+            </form>
           </div>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 };
 

@@ -24,30 +24,28 @@ const addressdata = [
 
 function Addresshome() {
   return (
-    <div>
-      <section className="adress-main">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 col-xs-12 heading-main">
-              <h3 className="color-wt pb-4">Our Address</h3>
-            </div>
-          </div>
-          <div className="row ">
-            {addressdata.map((addressconst, index) => (
-              <div className="col col-sm-4 col-xs-12" key={index}>
-                <div className="address-card">
-                  <Image src={addressconst.img} alt="" />
-                  <div className="content">
-                    <h5>{addressconst.title}</h5>
-                    <p>{addressconst.para}</p>
-                  </div>
-                </div>
-              </div>
-            ))}
+    <section className="adress-main">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-xs-12 heading-main">
+            <h3 className="color-wt pb-4">Our Address</h3>
           </div>
         </div>
-      </section>
-    </div>
+        <div className="row ">
+          {addressdata.map((addressconst, index) => (
+            <div className="col col-sm-4 col-xs-12" key={index}>
+              <div className="address-card">
+                <Image src={addressconst.img} alt="" />
+                <div className="content">
+                  <h5>{addressconst.title}</h5>
+                  <p>{addressconst.para}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

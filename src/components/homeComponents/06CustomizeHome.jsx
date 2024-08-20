@@ -34,31 +34,29 @@ const customizeContent = [
 
 const CustomizeHome = () => {
   return (
-    <div>
-      <section className="customized-approach">
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-12 col-xs-12 heading-main text-center mb-5">
-              <h3>
-                A Unified Vision That Caters To
-                <span>Diverse Industry Demands</span>
-              </h3>
-            </div>
-          </div>
-
-          <div className="row diverse-main px-2">
-            {customizeContent.map(({ Icon, title }, index) => (
-              <div className="col col-xs-12" key={index}>
-                <div className="icon-content text-center">
-                  <Icon />
-                  <p className="text-center">{title}</p>
-                </div>
-              </div>
-            ))}
+    <section className="customized-approach">
+      <div className="container">
+        <div className="row">
+          <div className="col-sm-12 col-xs-12 heading-main text-center mb-5">
+            <h3>
+              A Unified Vision That Caters To
+              <span>Diverse Industry Demands</span>
+            </h3>
           </div>
         </div>
-      </section>
-    </div>
+
+        <div className="row diverse-main px-2">
+          {customizeContent.map(({ Icon, title }, index) => (
+            <div className="col col-xs-12" key={index}>
+              <div className="icon-content text-center">
+                <Icon />
+                <p className="text-center">{title}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 

@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import React, { useRef, useEffect, useState } from "react";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
@@ -6,7 +6,6 @@ import Slider from "react-slick";
 import Image from "next/image";
 import Quotes from "../../../public/images/quote-left.png";
 import { testimonialData } from "@/utils/07utilhomtestim";
-
 
 const HomeTestimonial = () => {
   const slider1Ref = useRef(null); // Ref for main slider
@@ -74,12 +73,12 @@ const HomeTestimonial = () => {
       {
         breakpoint: 375, // Below 375px width
         settings: {
-          slidesToShow: 2, 
+          slidesToShow: 2,
           arrows: true,
           centerMode: true,
         },
       },
-    ]
+    ],
   };
 
   return (
@@ -88,25 +87,40 @@ const HomeTestimonial = () => {
         <div className="row">
           <div className="col-sm-12 col-xs-12">
             <div className="heading-main text-center pb-5">
-              <h3>Let us Hear <span>What Our Clients Say</span></h3>
+              <h3>
+                Let us Hear <span>What Our Clients Say</span>
+              </h3>
               <p>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut
                 dignissim facilisis ornare. Suspendisse commodo, ipsum nec
                 pellentesque vulputate
               </p>
             </div>
-            <Slider {...settingsMain} ref={slider1Ref} className="testimonial-top">
+            <Slider
+              {...settingsMain}
+              ref={slider1Ref}
+              className="testimonial-top"
+            >
               {testimonialData.map((testimonial) => (
                 <div key={testimonial.id}>
                   <div className="row align-items-center">
                     <div className="col-sm-6 col-xs-12">
                       <div className="image-left">
-                        <Image src={testimonial.image} alt={testimonial.name} width={500} height={340} />
+                        <Image
+                          src={testimonial.image}
+                          alt={testimonial.name}
+                          width={500}
+                          height={340}
+                        />
                       </div>
                     </div>
                     <div className="col-sm-6 col-xs-12">
                       <div className="content-right">
-                      <Image src={Quotes} alt="quotes" className="quote-main"/>
+                        <Image
+                          src={Quotes}
+                          alt="quotes"
+                          className="quote-main"
+                        />
                         <h4>{testimonial.name}</h4>
                         <span>{testimonial.title}</span>
                         <p>{testimonial.description}</p>
@@ -117,13 +131,22 @@ const HomeTestimonial = () => {
               ))}
             </Slider>
             <div className="navtestimonial">
-            <Slider {...settingsNav} ref={slider2Ref} className="slider-thumbnail">
-              {testimonialData.map((testimonial) => (
-                <div key={testimonial.id}>
-                  <Image src={testimonial.image} alt={testimonial.name} width={340} height={340} />
-                </div>
-              ))}
-            </Slider>
+              <Slider
+                {...settingsNav}
+                ref={slider2Ref}
+                className="slider-thumbnail"
+              >
+                {testimonialData.map((testimonial) => (
+                  <div key={testimonial.id}>
+                    <Image
+                      src={testimonial.image}
+                      alt={testimonial.name}
+                      width={340}
+                      height={340}
+                    />
+                  </div>
+                ))}
+              </Slider>
             </div>
           </div>
         </div>

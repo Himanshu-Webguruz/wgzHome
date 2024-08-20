@@ -39,7 +39,11 @@ const HomeTab = () => {
                       {tab.content.map((paragraph, index) => (
                         <p key={index}>{paragraph}</p>
                       ))}
-                      <Link className="about--btn" href={tab.link.href} aria-label="Tabber links">
+                      <Link
+                        className="about--btn"
+                        href={tab.link.href}
+                        aria-label="Tabber links"
+                      >
                         {tab.link.text} <FontAwesomeIcon icon={faArrowRight} />
                       </Link>
                     </div>
@@ -47,9 +51,9 @@ const HomeTab = () => {
                       <Image
                         src={tab.imageSrc}
                         alt={tab.title}
-                          width={643}
-                          height={569}
-                        style={{height:"100%", width:"100%"}}
+                        width={643}
+                        height={569}
+                        style={{ height: "100%", width: "100%" }}
                         priority
                       />
                     </div>
