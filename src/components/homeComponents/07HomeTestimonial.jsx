@@ -37,7 +37,49 @@ const HomeTestimonial = () => {
     dots: false,
     centerMode: true,
     focusOnSelect: true,
-    arrows: true
+    arrows: true,
+    responsive: [
+      {
+        breakpoint: 1024, // Below 991px width
+        settings: {
+          slidesToShow: 4, // Show 3 slides
+          arrows: true,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 991, // Below 991px width
+        settings: {
+          slidesToShow: 3, // Show 3 slides
+          arrows: true,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 768, // Below 768px width
+        settings: {
+          slidesToShow: 3, // Show 2 slides
+          arrows: true,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 668, // Below 768px width
+        settings: {
+          slidesToShow: 2, // Show 2 slides
+          arrows: true,
+          centerMode: true,
+        },
+      },
+      {
+        breakpoint: 375, // Below 375px width
+        settings: {
+          slidesToShow: 2, 
+          arrows: true,
+          centerMode: true,
+        },
+      },
+    ]
   };
 
   return (
