@@ -56,7 +56,7 @@ const Featuredblog = () => {
                     <Image
                       src={Blogcont.img}
                       alt=""
-                      style={{ height: "auto", width: "auto" }}
+                      style={{  }}
                     />
                   </div>
                   <div className="blog-content">
@@ -76,7 +76,7 @@ const Featuredblog = () => {
                     <Image
                       src={Blogcont.img}
                       alt=""
-                      style={{ height: "auto", width: "auto" }}
+                      style={{  }}
                     />
                   </div>
                   <div className="blog-content">

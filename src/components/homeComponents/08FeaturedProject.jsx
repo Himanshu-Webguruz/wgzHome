@@ -42,8 +42,8 @@ const AppData = [
               </div>
             </div>
             <div className="row featured-bg">
-              <div className="col-sm-6 col-xs-12 featured-left-image text-center p-5">
-                <Image src={vorides} alt="vorides" />
+              <div className="col-sm-6 col-xs-12 featured-left-image text-center p-5 d-flex align-items-center justify-content-center">
+                <Image src={vorides} alt="vorides" className="center-img"/>
                 <Image
                   src={voridelogo}
                   alt="vorides-logo"

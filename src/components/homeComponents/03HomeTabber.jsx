@@ -47,9 +47,9 @@ const HomeTab = () => {
                       <Image
                         src={tab.imageSrc}
                         alt={tab.title}
-                        width={643}
-                        height={569}
-                        style={{height:"auto", width:"auto"}}
+                          width={643}
+                          height={569}
+                        style={{height:"100%", width:"100%"}}
                         priority
                       />
                     </div>

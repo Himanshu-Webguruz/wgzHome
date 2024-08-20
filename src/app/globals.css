@@ -1,9 +1,13 @@
 
 h1, h2, h3, h4, h5, h6{
-    font-family: var(--font-outfit), sans-serif;
+    font-family: var(--font-outfit);
+}
+img{
+    width: 100%;
+    height: auto;
 }
 body{
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-inter);
     color: #383838;
 }
 .color-wt{
@@ -16,7 +20,7 @@ ul{
   }
   a{
     text-decoration: none;
-    font-family: var(--font-inter), sans-serif;
+    font-family: var(--font-inter);
     font-size: 18px;
     font-weight: 600;
     color: #383838;
@@ -24,6 +28,7 @@ ul{
     font-size: 18px;
     color: #383838;
     font-weight:400;
+    font-family: var(--font-inter);
   }
   span{
     color: #25C1D5;
@@ -41,6 +46,7 @@ h5 {
     font-size: 24px;
     font-weight: 600;
 }
+
   .heading-main h3 span,.technical-main .content h4 span{
     font-weight: 800;
     color: #168B9A;
@@ -59,7 +65,11 @@ h5 {
     background-image: linear-gradient(45deg, #D9E6E8, #FFFFFF); 
     animation: colormove 2s infinite;
 }
-
+.nav.navigation-main img {
+    width: 100%;
+    max-width: 113px;
+    height: auto;
+}
   /* header css */
   .nav.navigation-main {
     position: absolute;
@@ -228,7 +238,7 @@ form.website-label {
     display: flex;
     justify-content: space-between;
 }
-form.website-label input[type="submit"] {
+form.website-label button {
     position: absolute;
     right: 0;
     width: auto;
@@ -240,8 +250,10 @@ form.website-label input[type="submit"] {
     color: #fff;
     padding: 8px 30px;
     transition: 0.3s ease-in-out 0s;
+    bottom: 0;
+    height: 100%;
 }
-form.website-label input[type="submit"]:hover{
+form.website-label button:hover, form.contact-right-form button:hover{
     background-color: #000;
 }
 .animate-charcter
@@ -374,8 +386,12 @@ ul#uncontrolled-tab-example {
 .tab-main .image img {
     border-radius: 40px;
 }
+a.about--btn svg {
+    width: 14px;
+}
 .tab-main .image-content .image img {
     width: 100%;
+    object-fit: cover;
 }
 .tab-main .image-content .image {
     width: 50%;
@@ -397,6 +413,13 @@ a.about--btn {
     color: #168B9A;
     line-height: 26px;
     position: relative;
+    transition: 0.3s ease-in-out 0s;
+}
+a.about--btn svg{
+    transition: 0.3s ease-in-out 0s;
+}   
+a.about--btn:hover svg {
+    transform: translateX(6px);
 }
 /* number css */
 .number-main {
@@ -432,7 +455,7 @@ form.websiteInput {
     max-width: 780px;
     margin: auto;
 }
-form.websiteInput input[type="submit"] {
+form.websiteInput button {
     position: absolute;
     right: 0;
     top: 0;
@@ -442,6 +465,7 @@ form.websiteInput input[type="submit"] {
     background-color: #168B9A;
     color: #fff;
     border-radius: 0px 50px 50px 0px;
+    transition: 0.3s ease-in-out 0s;
 }
 form.websiteInput input[type="text"] {
     width: 100%;
@@ -495,7 +519,6 @@ ul.logos-main img {
     margin-bottom: 11px;
 }
 .technical-main p {
-    font-size: 16px;
     font-weight: 400;
     line-height: 26px;
     text-align: left;
@@ -633,6 +656,7 @@ svg.cf-icon-svg {
     background-color: #168B9A;
     position: relative;
 }
+
 img.voridelogo {
     position: absolute;
     right: 0;
@@ -641,6 +665,7 @@ img.voridelogo {
     background-color: rgb(255 255 255 / 40%);
     transform: translate(49%, 0);
     padding: 4px;
+      max-width: 120px;
 }
 .featured-right {
     background-color: #D8AD00;
@@ -734,6 +759,7 @@ a.explore-btn {
     color: #FFFFFF;
     font-size: 16px;
     font-weight: 600;
+    transition: 0.3s ease-in-out 0s;
 }
 section.adress-main {
     background-color: #168B9A;
@@ -747,6 +773,11 @@ section.adress-main {
 }
 .address-card img {
     margin-bottom: 22px;
+    height: 123px;
+    object-fit: contain;
+}
+.bottom-right-img img {
+    max-width: 120px;
 }
 .address-card .content p {
     margin: 0px;
@@ -755,9 +786,25 @@ section.adress-main {
     font-weight: 400;
     margin-bottom: 13px;
     display: inline-block;
+    transition: 0.3s ease-in-out 0s;
+}
+.footer-sub ul li a:hover {
+    color: #168b9a;
+    transform: translateX(4px);
+}
+.border-botm {
+    border-bottom: 1px solid #D9D9D9;
+    margin-bottom: 14px;
 }
 .footer-sub h5 {
     margin-bottom: 18px;
+}
+.right-privacy ul li:last-child a {
+    padding-right: 0px;
+}
+.right-privacy ul li a {
+    font-weight: 400;
+    padding: 0px 20px 0px 0px;
 }
 section.adress-main .heading-main h3 {
     color: #fff;
@@ -777,12 +824,11 @@ main .stickyMask{
   height: 100vh;
   align-items: center;
   justify-content: center;
-  mask-image: url('/images/header-logo.png');
+  mask-image: url('/images/header-logo-one.svg');
   mask-position: center center;
   mask-repeat: no-repeat;
   mask-size: 12%;
 }
-
 .stickyMask video{
   height: 100%;
   width: 100%;
@@ -791,7 +837,182 @@ main .stickyMask{
 .number-main .card:hover, .blog-card:hover{
     box-shadow: none;
 }
-  
+.blog-sub.right .blog-card{
+    height: 100%;
+}
+.btn-main button:hover, a.explore-btn:hover{
+background-color: #000;
+}
+.image-left img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+.testimonial-main button.slick-arrow.slick-prev {
+    left: 0 !important;
+    background-image: url(/images/left-arrow.png);
+    transform: translateX(-80px);
+    z-index: 1;
+}
+.testimonial-main button.slick-arrow {
+    position: absolute;
+    bottom: -30px !important;
+    left: 0;
+    right: 0;
+    margin: auto auto 0;
+    width: 103px;
+    background-repeat: no-repeat;
+    background-size: 103px;
+    background-position: center center;
+    height: 102px;
+    background-image: url(/images/right-arrow.png);
+    top: auto;
+    transform: translateX(80px);
+    opacity: 0.11;
+}
+.testimonial-main button.slick-arrow::before{
+    display: none !important
+}
+
+.slider-thumbnail img {
+    width: 80px;
+    height: 80px;
+    margin: auto;
+    border-radius: 50%;
+}
+.navtestimonial .slick-list {
+    margin: 0px 50px;
+    padding: 0px;
+}
+.navtestimonial {
+    margin: auto;
+    padding: 0px 50px;
+}
+.testimonial-main .content-right h4 {
+    font-weight: 600;
+}
+.content-right img.quote-main {
+    position: relative;
+    bottom: -20px;
+    max-width: 120px;
+    object-fit: contain;
+}
+.testimonial-top .content-right span {
+    padding-bottom: 20px;
+    display: inline-block;
+}
+.slider-thumbnail .slick-active.slick-center.slick-current img {
+    border: 1px solid #26C6DA;
+    padding: 3px;
+    transform: scale(1.44);
+}
+.slider-thumbnail .slick-track {
+    padding: 100px 0px 100px;
+}
+.testimonial-main .heading-main p {
+    max-width: 920px;
+    margin: auto;
+}
+form.website-label p {
+    position: absolute;
+    font-size: 16px;
+    padding: 20px;
+}
+/* contact css */
+.contact-main {
+    background-color: #F4F4F4;
+    padding: 60px 0px;
+}
+form.contact-right-form {
+    border: 1px solid #DDDDDD;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 24px;
+}
+form.contact-right-form h3 {
+    font-size: 28px;
+    font-weight: 800;
+    font-family: 'Outfit';
+    margin-bottom: 20px;
+}
+form.contact-right-form label{
+    width: 100%;
+}
+form.contact-right-form textarea {
+    min-height: 140px;
+}
+form.contact-right-form label input, 
+form.contact-right-form label select, 
+form.contact-right-form textarea {
+    width: 100%;
+    padding: 14px 12px;
+    border-radius: 4px;
+    margin-bottom: 14px;
+    border: 1px solid #DDDDDD;
+    font-size: 14px;
+    color: #9B9B9B;
+}
+form.contact-right-form button {
+    background-color: #26C6DA;
+    border: 0px;
+    padding: 10px 32px;
+    display: inline-block;
+    border-radius: 50px;
+    color: #fff;
+    transition: 0.3s ease-in-out 0s;
+    
+}
+.contact-sub.left h2 {
+    font-size: 80px;
+    font-weight: 800;
+    color: #26C6DA;
+}
+.contact-info h4 {
+    font-weight: 800;
+    font-size: 32px;
+    margin: 20px 0px;
+}
+.contact-info-sub {
+    background-color: #fff;
+    padding: 16px 16px 16px 80px;
+    border-radius: 12px;
+    position: relative;
+}
+
+.contact-info-sub .icon svg {
+    font-size: 26px !important;
+}
+.contact-info-sub .icon svg path {
+    fill: #fff !important;
+}
+.contact-info-sub .icon {
+    width: 61px;
+    height: 61px;
+    background-color: #26C6DA;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50px;
+}
+.contact-info-sub .icon {
+    width: 61px;
+    height: 61px;
+    background-color: #26C6DA;
+    border-radius: 50px;
+    position: absolute;
+    left: 10px;
+    top: 0;
+    bottom: 0;
+    transform: translateY(11px);
+}
+.contact-info-sub .content p {
+    font-size: 14px;
+    margin: 0px 0px 8px 0px;
+}
+img.center-img {
+    max-width: 400px;
+}
+
 /* animations */
 @keyframes draw {
     to {
@@ -824,25 +1045,115 @@ main .stickyMask{
   
     
     /* media query start */
-
-    @media(max-width: 1199px){
+@media(max-width: 1199px){
+    h5 {
+        font-size: 18px;
+    }
+    p,a {
+        font-size: 14px;
+    }
+ 
 h1{
     font-size: 40px;    
 }
+.contact-info .row >div {
+    flex: auto;
+    width: 100%;
+    margin-bottom: 15px;
+}
+.contact-info .row {
+    flex-direction: column;
+}
 .container{
     max-width: 100%;
+}
+.tab-main .content {
+    padding: 20px;
+}
+.navtestimonial .slick-list {
+    margin: 0px;
+    padding: 0px !important;
+}
+.contact-sub.left h2 {
+    font-size: 54px;}
+.bottom-right-img img {
+    width: 80px;
+    height: auto;
 }
 .navigation-main{
     display: none;
 }
 .video-banner video, .home-banner {
-    min-height: 70vh;
+    min-height: 68vh;
     object-fit: cover;
+}
+.number-main .card {
+    padding: 5px;
+}
+.number-main .card h3 {
+    font-size: 36px;}
+.number-main .card h4 {
+    font-size: 24px;
+}
+.number-main .card p {
+    font-size: 14px;
+}
+.card a.btn-link {
+    font-size: 12px;
+}
+ul.logos-main li {
+    min-height: 72px;
+    width: 29%;
+}
+ul.logos-main img {
+    max-width: 128px;
+}
+.diverse-main >div {
+    width: 230px;
+}
+.featured-bg .featured-left-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.featured-bg .featured-left-image img {
+    width: 100%;
+    height: auto;
+}
+.featured-bg .featured-left-image img.voridelogo {
+    width: 112px;
+}
+.footer-sub ul li a{
+    font-size: 14px;
+}
+a.btn-link.about--btn{
+    text-align: center;
+}
+ul#uncontrolled-tab-example li button {
+    font-size: 20px;
+    line-height: 34px;
+    padding: 11px 6px;
+    max-width: 169px;
+}
+ul#uncontrolled-tab-example li {
+    margin: 0px 4px;
+}
+.featured-right-content ul.icon-content-main li {
+    width: 49%;
+}
+.counter-main label span {
+    font-size: 50px;
 }
     }
 @media(max-width: 767px){
 .image-content, .card-content, .technical-main .row:nth-child(2n+1) .card-content {
     flex-direction: column;
+}
+.address-card img{
+    max-width: 194px;
+}
+section.header-top{
+    display: none;
 }
 .tab-main .content, .tab-main .image-content .image {
     width: 100%;
@@ -852,26 +1163,69 @@ img.voridelogo {
     bottom: 10px;
     left: 10px;
     right: 0;
-    transform: none;
+    transform: none;  
+}
+.video-banner video, .home-banner {
+    min-height: 86vh;
+}
+
+.blog-content{
+    padding: 20px 0px 0px;
 }
 .featured-right {
     padding: 40px 20px !important;
+}
+.navtestimonial {
+    padding: 0px 10px;
+}
+.navtestimonial .slick-list {
+    margin: 0px 0px;
+    padding: 0px;
+}
+.slider-thumbnail img {
+    width: 48px;
+    height: 48px;
+
 }
 .right-privacy ul {
     text-align: center;
     justify-content: center !important;
     padding: 20px;
+    flex-direction: column;
+}
+.copyright p {
+    text-align: center;
+    margin: 0px;
+}
+.contact-sub.left h2 {
+    font-size: 48px;}
+.right-privacy ul  li a{
+    padding: 0px;
 }
 .featured-bg .featured-left-image >img {
     max-width: 240px;
 }
-form.website-label input[type="submit"] {
+form.website-label button, form.websiteInput button {
     position: static;
     border-radius: 50px;
     width: 100%;
     margin-top: 12px;
     font-size: 14px;
+    padding: 18px 12px;
 }
+.counter-main label span {
+    font-size: 50px;}
+    ul#uncontrolled-tab-example li {
+        width: 100%;
+    }
+    ul#uncontrolled-tab-example li button {
+        font-size: 16px;
+        max-width: 100%;
+        width: 100%;
+    }
+    .tab-main .content{
+        padding: 20px;
+    }
 .counter-main label, 
 .tab-main .content, 
 .tab-main .image-content .image,
@@ -891,6 +1245,12 @@ form.website-label input[type="submit"] {
 .technical-main .card-content .image {
     padding-bottom: 20px;
 }
+.technical-main .card-content .image img{
+    width: 100% !important;
+}
+.counter-main .heading-main p{
+    max-width: 100%;
+}
 .blog-sub.left >div:last-child{
     margin-bottom: 30px;    
 }
@@ -905,4 +1265,46 @@ ul.logos-main li {
 ul.icon-content-main li {
     width: 48%;
 }
+.testimonial-main button.slick-arrow {
+    width: 64px;
+    background-size: 64px;
+    height: 50px;
+    transform: translateX(80px);
 }
+form.contact-right-form {
+    padding: 20px;
+}
+.banner-content h1 {
+    line-height: 40px;
+    font-size: 34px;
+}
+.banner-content p {
+    font-size: 18px;
+}
+form.website-label input {
+    min-height: 50px;
+    font-size: 14px;
+}
+
+}
+@media(max-width: 575px){
+    .counter-main .row {
+        flex-direction: column;
+    }
+    .tab-content .image img {
+        width: 100% !important;
+    }
+    .blog-sub.left .blog-card {
+        height: auto;
+        flex-direction: column;
+    }
+    .blogimage img {
+        width: 100% !important;
+        height: 220px !important;
+        object-fit: cover;
+    }
+    .blogimage {
+        width: 100%;
+    }
+}
+/* header css given by HIMANSHU KANSAL for responsive */

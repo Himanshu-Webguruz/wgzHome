@@ -30,7 +30,7 @@ const TechnicalHome = () => {
             <div className="row d-flex align-items-center" key={index}>
               <div className="card-content">
                 <div className="col-sm-6 col-xs-12 image">
-                  <Image src={techmain.img} alt="tech-1.png" style={{height:"auto",width:"auto"}}  loading="lazy"/>
+                  <Image src={techmain.img} alt="tech-1.png" style={{height:"auto",width:"100%"}}  loading="lazy"/>
                 </div>
                 <div className="col-sm-6 col-xs-12 content">
                   {splitTitle(techmain.title)}

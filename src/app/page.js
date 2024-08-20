@@ -7,6 +7,9 @@ import CustomizeHome from "@/components/homeComponents/06CustomizeHome";
 import FeaturedProject from "@/components/homeComponents/08FeaturedProject";
 import Featuredblog from "@/components/homeComponents/09Featuredblog";
 import Addresshome from "@/components/homeComponents/12Addresshome";
+import HomeTestimonial from "@/components/homeComponents/07HomeTestimonial";
+import Webguruzwe from "@/components/homeComponents/10WgzLogoZoom";
+import Contact from "@/components/homeComponents/11HomeContact";
 
 export default function Home() {
   return (
@@ -19,6 +22,9 @@ export default function Home() {
     <CustomizeHome/>
     <FeaturedProject/>
     <Featuredblog/>
+    <HomeTestimonial/>
+    <Webguruzwe/>
+    <Contact/>
     <Addresshome/>
     </>
   );
