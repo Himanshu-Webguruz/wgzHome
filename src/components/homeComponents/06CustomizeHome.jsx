@@ -46,7 +46,7 @@ const CustomizeHome = () => {
             </div>
           </div>
 
-          <div className="row diverse-main">
+          <div className="row diverse-main px-2">
             {customizeContent.map(({ Icon, title }, index) => (
               <div className="col col-xs-12" key={index}>
                 <div className="icon-content text-center">

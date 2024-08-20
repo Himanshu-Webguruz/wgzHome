@@ -1,12 +1,12 @@
 "use client";
-import React from "react";
-import logo from "../../public/images/header-logo.png";
+import React, { useState, useEffect } from "react";
+import logo from "../../public/images/header-logo-one.svg";
 import Link from "next/link";
-import { useState, useEffect } from "react";
 import Image from "next/image";
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // State to track menu open/close
 
   useEffect(() => {
     const handleScroll = () => {
@@ -19,58 +19,75 @@ const Header = () => {
     };
   }, []);
 
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={`hdrtopsst ${isScrolled ? "onScroll" : ""}`}>
       <section className="header-top">
         <div className="container">
           <div className="row">
-            <div className="col-sm-6 col-xs-12"></div>
-            <div className="col-sm-6 col-xs-12 contact-right">
+            <div className="col-sm-2 col-xs-12"></div>
+            <div className="col-sm-10 col-xs-12 contact-right">
               <ul>
                 <li>
-                  <Link href="#">(+91) 708 723 3361( Sales )</Link>
+                  <Link href="#">(+91) 708 723 3361 (Sales)</Link>
                 </li>
                 <li>
-                  <Link href="#">(+91) 959 201 6444( Jobs )</Link>
+                  <Link href="#">(+91) 959 201 6444 (Jobs)</Link>
                 </li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-      <section className="nav navigation-main">
+      <nav className="navbar navbar-expand-lg navigation-main">
         <div className="container">
-          <div className="row align-items-center">
-            <div className="col-sm-4 col-xs-12 logo">
-              <Image src={logo} alt="logo" />
-            </div>
-            <div className="col-sm-8 col-xs-12 menu">
-              <ul className="d-flex m-0 p-0 justify-content-end align-items-center">
-                <li className="px-3 py-2 mx-2">
-                  <Link href="/">About</Link>
-                </li>
-                <li className="px-3 py-2  mx-2">
-                  <Link href="/">Services</Link>
-                </li>
-                <li className="px-3 py-2 mx-2">
-                  <Link href="/">Our Portfolio</Link>
-                </li>
-                <li className="px-3 py-2 mx-2">
-                  <Link href="/">Resources</Link>
-                </li>
-                <li className="px-3 py-2 mx-2">
-                  <Link href="/">Join Us</Link>
-                </li>
-                <li className="contactMain px-4">
-                  <Link href="/">
-                    <span>Contact Us</span>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+          <a className="navbar-brand" href="#">
+            <Image src={logo} alt="logo" />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            onClick={toggleMenu} // Toggle menu on click
+            aria-controls="navbarScroll"
+            aria-expanded={isMenuOpen} // Reflect state in aria-expanded
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div
+            className={`collapse navbar-collapse menu ${
+              isMenuOpen ? "show" : ""
+            }`} // Conditionally apply 'show' class
+            id="navbarScroll"
+          >
+            <ul className="navbar-nav me-0 ms-auto navbar-nav-scroll d-flex align-items-center">
+              <li className="px-3 py-2 mx-2">
+                <Link href="/">About</Link>
+              </li>
+              <li className="px-3 py-2 mx-2">
+                <Link href="/">Services</Link>
+              </li>
+              <li className="px-3 py-2 mx-2">
+                <Link href="/">Our Portfolio</Link>
+              </li>
+              <li className="px-3 py-2 mx-2">
+                <Link href="/">Resources</Link>
+              </li>
+              <li className="px-3 py-2 mx-2">
+                <Link href="/">Join Us</Link>
+              </li>
+              <li className="contactMain px-4">
+                <Link href="/">
+                  <span>Contact Us</span>
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
-      </section>
+      </nav>
     </header>
   );
 };

@@ -79,7 +79,7 @@ const HomeNumbers = () => {
                 with impactful results and wows them with stellar customer
                 service.
               </p>
-              <form className="websiteInput btn-main">
+              <form className="website-label btn-main">
                 <input
                   type="text"
                   placeholder="Enter Your Website"
@@ -101,7 +101,7 @@ const HomeNumbers = () => {
           </div>
           <div className="row numbercard-main">
             {numbercards.map((card, index) => (
-              <div className="col-sm-3 col-xs-12" key={index}>
+              <div className="col col-sm-3 col-xs-12" key={index}>
                 <div className="card text-center">
                   <h4>{card.title}</h4>
                   <p>{card.para}</p>

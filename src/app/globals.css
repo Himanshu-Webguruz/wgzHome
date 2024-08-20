@@ -71,7 +71,7 @@ h5 {
     height: auto;
 }
   /* header css */
-  .nav.navigation-main {
+  .navigation-main {
     position: absolute;
     top: 40px;
     left: 0;
@@ -79,10 +79,14 @@ h5 {
     z-index: 2;
     padding: 20px 0px;
 }
+a.navbar-brand img {
+    max-width: 110px;
+}
 .header-top {
     background-color: #168B9A;
     padding: 8px 0px;
 }
+
 .contact-right ul {
     display: flex;
     justify-content: flex-end;
@@ -94,7 +98,7 @@ h5 {
     margin-left: 0px;
 }
 .contact-right ul li a {
-    font-size: 12px;
+    font-size: 14px;
     color: #fff;
     font-weight: 600;
     padding-left: 12px;
@@ -156,6 +160,7 @@ h5 {
     position: relative;
     overflow: hidden;
     display: inline-block;
+    z-index: 1;
 }
 .menu ul li.contactMain a span{
     color: #fff;
@@ -163,20 +168,20 @@ h5 {
 }
 .menu ul li.contactMain a::before {
     content: "";
-    position: absolute;
-    right: 170px;
     top: 0;
+    transform: translateX(100%);
+    width: 100%;
+    position: absolute;
     bottom: 0;
-    background-color: #000000;
-    transition: 0.3s ease-in-out 0s;
-    left: 0;
+    animation: slide 2s infinite;
+    background: linear-gradient(to right,rgba(64,235,241,0) 0%,rgba(255,254,253,56%) 50%,rgba(255,254,253,28%) 99%,rgba(64,235,241,0) 100%);
 }
 .menu ul li.contactMain a:hover::before{
     right: 0;
 }
 /* home banner css */
 .home-banner {
-    min-height: 80vh;
+    min-height: 100vh;
     background-position: center center;
     background-size: cover;
     position: relative;
@@ -230,7 +235,7 @@ form.website-label input {
 form.website-label input[type="text"]::placeholder {
     color: #DADADA;
 }
-form.website-label {
+.number-main form.website-label {
     max-width: 690px;
     position: relative;
 }
@@ -252,10 +257,9 @@ form.website-label button {
     transition: 0.3s ease-in-out 0s;
     bottom: 0;
     height: 100%;
+    overflow: hidden;
 }
-form.website-label button:hover, form.contact-right-form button:hover{
-    background-color: #000;
-}
+
 .animate-charcter
 {
   background-image: linear-gradient(
@@ -432,6 +436,7 @@ a.about--btn:hover svg {
     cursor: pointer;
     padding: 36px 45px;
     border-radius: 12px;
+    height: 100%;
 }
 
 .number-main .card h4 {
@@ -450,12 +455,14 @@ a.about--btn:hover svg {
     color: #168B9A;
     text-decoration: none;
 }
-form.websiteInput {
+form.website-label {
     position: relative;
-    max-width: 780px;
+    max-width: 720px;
+}
+.number-main form.website-label{
     margin: auto;
 }
-form.websiteInput button {
+form.website-label button {
     position: absolute;
     right: 0;
     top: 0;
@@ -467,13 +474,7 @@ form.websiteInput button {
     border-radius: 0px 50px 50px 0px;
     transition: 0.3s ease-in-out 0s;
 }
-form.websiteInput input[type="text"] {
-    width: 100%;
-    min-height: 60px;
-    padding: 12px 20px;
-    border: 0px;
-    border-radius: 50px;
-}
+
 a.about-btn svg {
     padding-left: 8px;
 }
@@ -503,14 +504,6 @@ ul.logos-main img {
     transform: scale(1);
 }
 
-@keyframes zoom {
-   from{
-    transform: scale(1);
-   }
-   to{
-    transform: scale(1.10);
-   }
-}
 .technical-main .content h4 {
     font-size: 28px;
     font-weight: 700;
@@ -564,6 +557,7 @@ ul.logos-main img {
 }
 .diverse-main {
     flex-wrap: wrap;
+    justify-content: center;
 }
 .technical-main .container .row:first-child {
     background-color: transparent;
@@ -600,20 +594,23 @@ ul.logos-main img {
 :focus-visible {
     outline: unset;
 }
+.diverse-main >div:hover {
+    box-shadow: -5px 5px 9px #168b9a30;
+}
+.diverse-main >div:nth-child(odd) {
+    background-color: #EDF8F9;
+}
 .diverse-main >div {
     border: 1px solid #EDF8F9;
     margin: 4px;
-    width: 256px;
+    width: 17%;
     height: 174px;
     flex: auto;
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    max-width: 256px;
-}
-.diverse-main >div:nth-child(odd) {
-    background-color: #EDF8F9;
+    transition: 0.3s ease-in-out 0s;
 }
 .customized-approach .icon-content img {
     margin: 0px 0px 12px 0px;
@@ -760,6 +757,8 @@ a.explore-btn {
     font-size: 16px;
     font-weight: 600;
     transition: 0.3s ease-in-out 0s;
+    position: relative;
+    overflow: hidden;
 }
 section.adress-main {
     background-color: #168B9A;
@@ -770,6 +769,10 @@ section.adress-main {
     background-color: #FFFFFF;
     padding: 30px;
     border-radius: 14px;
+    transition: 0.3s ease-in-out 0s;
+}
+.address-card:hover {
+    transform: translateY(-2px);
 }
 .address-card img {
     margin-bottom: 22px;
@@ -808,6 +811,7 @@ section.adress-main {
 }
 section.adress-main .heading-main h3 {
     color: #fff;
+    font-weight: 600;
 }
 /* Webguruzwe.css */
 main .mask-container{
@@ -840,8 +844,24 @@ main .stickyMask{
 .blog-sub.right .blog-card{
     height: 100%;
 }
-.btn-main button:hover, a.explore-btn:hover{
-background-color: #000;
+a.explore-btn::before, 
+form.website-label button::before, 
+form.contact-right-form button::before
+{
+background: #fff;
+content: "";
+height: 155px;
+left: -75px;
+opacity: 0.2;
+position: absolute;
+top: -50px;
+transform: rotate(35deg);
+transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+width: 50px;
+}
+a.explore-btn:hover::before,form.website-label button:hover::before, 
+form.contact-right-form button:hover::before{
+    left: 120%;
 }
 .image-left img {
     width: 100%;
@@ -960,6 +980,7 @@ form.contact-right-form button {
     border-radius: 50px;
     color: #fff;
     transition: 0.3s ease-in-out 0s;
+    position: relative;
     
 }
 .contact-sub.left h2 {
@@ -1042,9 +1063,43 @@ img.center-img {
         width: 100%;
     }
 }
+@keyframes zoom {
+    from{
+     transform: scale(1);
+    }
+    to{
+     transform: scale(1.10);
+    }
+ }
+ @keyframes slide {
+     0% {
+         transform: translateX(-100%);
+     }
+ 
+     100% {
+         transform: translateX(100%);
+     }
+ }
   
     
-    /* media query start */
+/* media query start */
+@media(min-width: 992px){
+    header.onScroll .navigation-main li a {
+        font-size: 16px;
+    }
+    header.onScroll .navigation-main li.contactMain a {
+        padding: 8px 21px;
+    }
+    header.onScroll .navigation-main {
+        position: fixed;
+        background-color: #000000ba;
+        top: 0;
+        padding: 11px 0px;
+    }
+    header.onScroll .navigation-main img {
+        max-width: 83px;
+    }
+}
 @media(max-width: 1199px){
     h5 {
         font-size: 18px;
@@ -1080,8 +1135,13 @@ h1{
     width: 80px;
     height: auto;
 }
-.navigation-main{
-    display: none;
+button.navbar-toggler {
+    padding: 0px;
+    border: 0px;
+    z-index: 1;
+}
+button.navbar-toggler span.navbar-toggler-icon {
+    filter: invert(1);
 }
 .video-banner video, .home-banner {
     min-height: 68vh;
@@ -1089,6 +1149,7 @@ h1{
 }
 .number-main .card {
     padding: 5px;
+
 }
 .number-main .card h3 {
     font-size: 36px;}
@@ -1106,10 +1167,10 @@ ul.logos-main li {
     width: 29%;
 }
 ul.logos-main img {
-    max-width: 128px;
+    max-width: 80px;
 }
 .diverse-main >div {
-    width: 230px;
+    width: 30%;
 }
 .featured-bg .featured-left-image {
     display: flex;
@@ -1144,6 +1205,35 @@ ul#uncontrolled-tab-example li {
 .counter-main label span {
     font-size: 50px;
 }
+button.navbar-toggler:focus {
+    box-shadow: unset;
+}
+.navigation-main {
+    padding: 8px 0px;
+}
+
+    }
+    @media(max-width: 991px){
+        .navbar-collapse {
+            background-color: #000000d6;
+            position: absolute;
+            top: 90px;
+            left: 0;
+            right: 0;
+            padding: 11px 12px 20px;
+        }
+        .navbar-collapse ul.navbar-nav li {
+            padding: 7px 0px 9px 0px !important;
+        }
+        .navbar-collapse ul.navbar-nav {
+            align-items: flex-start !important;
+        }
+        header.onScroll .navigation-main{
+            position: static;
+        }
+        ul.logos-main img {
+            max-width: 55px;
+        }
     }
 @media(max-width: 767px){
 .image-content, .card-content, .technical-main .row:nth-child(2n+1) .card-content {
@@ -1151,9 +1241,6 @@ ul#uncontrolled-tab-example li {
 }
 .address-card img{
     max-width: 194px;
-}
-section.header-top{
-    display: none;
 }
 .tab-main .content, .tab-main .image-content .image {
     width: 100%;
@@ -1205,7 +1292,7 @@ img.voridelogo {
 .featured-bg .featured-left-image >img {
     max-width: 240px;
 }
-form.website-label button, form.websiteInput button {
+form.website-label button {
     position: static;
     border-radius: 50px;
     width: 100%;
@@ -1238,9 +1325,16 @@ form.website-label button, form.websiteInput button {
 }
 .number-main .card {
     margin-bottom: 30px;
+    height: auto;
 }
 .card-content >div {
     padding: 0px;
+    width: 100%;
+    flex: auto;
+}
+.col {
+    flex: auto;
+    width: 50%;
 }
 .technical-main .card-content .image {
     padding-bottom: 20px;
@@ -1259,9 +1353,7 @@ ul.logos-main img {
     height: 50px;}
 ul.logos-main li {
     min-height: 80px;}
-.diverse-main {
-    justify-content: center;
-}
+
 ul.icon-content-main li {
     width: 48%;
 }
@@ -1285,6 +1377,9 @@ form.website-label input {
     min-height: 50px;
     font-size: 14px;
 }
+.slider-thumbnail .slick-track {
+    padding: 50px 0px 50px;
+}
 
 }
 @media(max-width: 575px){
@@ -1293,6 +1388,9 @@ form.website-label input {
     }
     .tab-content .image img {
         width: 100% !important;
+    }
+    .diverse-main >div,.blogimage, .col {
+        width: 100%;
     }
     .blog-sub.left .blog-card {
         height: auto;
@@ -1303,8 +1401,9 @@ form.website-label input {
         height: 220px !important;
         object-fit: cover;
     }
-    .blogimage {
-        width: 100%;
+    .contact-right ul li a {
+        font-size: 10px;
+        padding-left: 8px;
+        margin-left: 8px;
     }
 }
-/* header css given by HIMANSHU KANSAL for responsive */
