@@ -79,7 +79,7 @@ const HomeBanner = () => {
                 Your browser does not support the video tag.
               </video>
             </div>
-            <div className="col-sm-8 col-xs-12 banner-content">
+            <div className="col col-sm-8 col-xs-12 banner-content">
               <h1>
                 A{" "}
                 <span className="animate-charcter">

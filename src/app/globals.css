@@ -243,22 +243,7 @@ form.website-label input[type="text"]::placeholder {
     display: flex;
     justify-content: space-between;
 }
-form.website-label button {
-    position: absolute;
-    right: 0;
-    width: auto;
-    background-color: #168B9A;
-    border: 0px;
-    border-radius: 0px 50px 50px 0px;
-    font-weight: 600;
-    font-size: 18px;
-    color: #fff;
-    padding: 8px 30px;
-    transition: 0.3s ease-in-out 0s;
-    bottom: 0;
-    height: 100%;
-    overflow: hidden;
-}
+
 
 .animate-charcter
 {
@@ -1293,10 +1278,6 @@ img.voridelogo {
     max-width: 240px;
 }
 form.website-label button {
-    position: static;
-    border-radius: 50px;
-    width: 100%;
-    margin-top: 12px;
     font-size: 14px;
     padding: 18px 12px;
 }
@@ -1405,5 +1386,15 @@ form.website-label input {
         font-size: 10px;
         padding-left: 8px;
         margin-left: 8px;
+    }
+    form.website-label button {
+        position: static;
+        border-radius: 50px;
+        width: 100%;
+        margin-top: 12px;
+    }
+    form.website-label p {
+        padding: 80px 0px 0px 20px;
+        margin: 0px;
     }
 }

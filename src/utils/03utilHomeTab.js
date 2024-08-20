@@ -9,7 +9,7 @@ const homeTabData = [
         "Scalability is not an afterthought rather a strategic advantage. Our solutions are built to grow with you- from the early stages of a startup to the expansion of an enterprise. We future-proof your success, thus keeping you agile and adaptable in an ever-evolving digital landscape."
       ],
       imageSrc: "/images/expert.webp",
-      link: { href: "/", text: "About Us" }
+      link: { href: "#", text: "About Us" }
     },
     {
       eventKey: "Records",
@@ -20,7 +20,7 @@ const homeTabData = [
         "Scalability is not an afterthought rather a strategic advantage. Our solutions are built to grow with you- from the early stages of a startup to the expansion of an enterprise. We future-proof your success, thus keeping you agile and adaptable in an ever-evolving digital landscape."
       ],
       imageSrc: "/images/expert.webp",
-      link: { href: "/", text: "About Us" }
+      link: { href: "#", text: "About Us" }
     },
     {
       eventKey: "Reviews",
@@ -31,7 +31,7 @@ const homeTabData = [
         "Scalability is not an afterthought rather a strategic advantage. Our solutions are built to grow with you- from the early stages of a startup to the expansion of an enterprise. We future-proof your success, thus keeping you agile and adaptable in an ever-evolving digital landscape."
       ],
       imageSrc: "/images/expert.webp",
-      link: { href: "/", text: "About Us" }
+      link: { href: "#", text: "About Us" }
     },
     {
       eventKey: "Technology",
@@ -42,7 +42,7 @@ const homeTabData = [
         "Scalability is not an afterthought rather a strategic advantage. Our solutions are built to grow with you- from the early stages of a startup to the expansion of an enterprise. We future-proof your success, thus keeping you agile and adaptable in an ever-evolving digital landscape."
       ],
       imageSrc: "/images/expert.webp",
-      link: { href: "/", text: "About Us" }
+      link: { href: "#", text: "About Us" }
     }
   ];
   
