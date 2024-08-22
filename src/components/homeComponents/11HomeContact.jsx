@@ -120,7 +120,7 @@ const Contact = () => {
               className="contact-right-form"
               onSubmit={(e) => e.preventDefault()}
             >
-              <h3>Let's Get to know you</h3>
+              <h3>Let&apos;s Get to know you</h3>
               <label>
                 <input
                   type="text"
