@@ -72,7 +72,7 @@ const FeaturedProject = () => {
                   focusable="false"
                   data-prefix="fas"
                   data-icon="arrow-right"
-                  class="svg-inline--fa fa-arrow-right "
+                  className="svg-inline--fa fa-arrow-right "
                   role="img"
                   xmlns="http://www.w3.org/2000/svg"
                   viewBox="0 0 448 512"

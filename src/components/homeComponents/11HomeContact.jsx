@@ -1,9 +1,56 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import PhoneInput from "react-phone-input-2";
+import "react-phone-input-2/lib/style.css";
 
 const Contact = () => {
+  const initialFormData = {
+    name: "",
+    email: "",
+    phone: "",
+    launchTime: "",
+    projectDetails: "",
+  };
+
+  const [formData, setFormData] = useState(initialFormData);
+  const [errors, setErrors] = useState({});
+
+  const validateForm = () => {
+    const newErrors = {};
+    if (!formData.name.trim()) newErrors.name = "Full Name is required";
+    if (!formData.email.trim()) {
+      newErrors.email = "Business Email is required";
+    } else if (!/\S+@\S+\.\S+/.test(formData.email)) {
+      newErrors.email = "Email is invalid";
+    }
+    if (!formData.phone) newErrors.phone = "Phone Number is required";
+    if (!formData.launchTime) newErrors.launchTime = "Launch Time is required";
+    if (!formData.projectDetails.trim())
+      newErrors.projectDetails = "Project Details are required";
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleChange = (field, value) => {
+    setFormData({
+      ...formData,
+      [field]: value,
+    });
+  };
+
+  const handleSubmit = () => {
+    if (validateForm()) {
+      console.log("Form Submitted:", formData);
+      setFormData(initialFormData); // Reset the form data to initial state
+      setErrors({}); // Clear any existing errors
+    } else {
+      console.log("Form has errors.");
+    }
+  };
+
   return (
     <section className="contact-main">
       <div className="container">
@@ -22,14 +69,14 @@ const Contact = () => {
               nunc feugiat, malesuada sapien a, aliquet diam. Vivamus ex nisi,
               pharetra nec ultricie.
             </p>
-            <a href="/" className="partner-btn  about--btn">
+            <a href="/" className="partner-btn about--btn">
               Become a Partner
               <svg
                 aria-hidden="true"
                 focusable="false"
                 data-prefix="fas"
                 data-icon="arrow-right"
-                class="svg-inline--fa fa-arrow-right ps-1"
+                className="svg-inline--fa fa-arrow-right ps-1"
                 role="img"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 448 512"
@@ -69,30 +116,69 @@ const Contact = () => {
             </div>
           </div>
           <div className="col-sm-6 col-xs-12">
-            <form className="contact-right-form">
-              <h3>LetGet to know you</h3>
+            <form
+              className="contact-right-form"
+              onSubmit={(e) => e.preventDefault()}
+            >
+              <h3>Let's Get to know you</h3>
               <label>
-                <input type="text" placeholder="Full Name" />
+                <input
+                  type="text"
+                  placeholder="Full Name"
+                  value={formData.name}
+                  onChange={(e) => handleChange("name", e.target.value)}
+                />
+                {errors.name && <span className="error">{errors.name}</span>}
               </label>
               <label>
-                <input type="text" placeholder="Business Email" />
+                <input
+                  type="text"
+                  placeholder="Business Email"
+                  value={formData.email}
+                  onChange={(e) => handleChange("email", e.target.value)}
+                />
+                {errors.email && <span className="error">{errors.email}</span>}
               </label>
               <label>
-                <input type="number" placeholder="Mobile Number" />
+                <PhoneInput
+                  country={"in"}
+                  placeholder="Phone Number"
+                  value={formData.phone}
+                  onChange={(phone) => handleChange("phone", phone)}
+                />
+                {errors.phone && <span className="error">{errors.phone}</span>}
               </label>
               <label>
-                <select>
-                  <option>When do you want to launch a solution?</option>
-                  <option>When do you want to launch a solution?</option>
-                  <option>When do you want to launch a solution?</option>
-                  <option>When do you want to launch a solution?</option>
-                  <option>When do you want to launch a solution?</option>
+                <select
+                  value={formData.launchTime}
+                  onChange={(e) => handleChange("launchTime", e.target.value)}
+                >
+                  <option value="">
+                    When do you want to launch a solution?
+                  </option>
+                  <option value="ASAP">ASAP</option>
+                  <option value="1-3 months">1-3 months</option>
+                  <option value="3-6 months">3-6 months</option>
+                  <option value="6-12 months">6-12 months</option>
+                  <option value="12+ months">12+ months</option>
                 </select>
+                {errors.launchTime && (
+                  <span className="error">{errors.launchTime}</span>
+                )}
               </label>
               <label>
-                <textarea placeholder="About Project"></textarea>
+                <textarea
+                  placeholder="About Project"
+                  value={formData.projectDetails}
+                  onChange={(e) =>
+                    handleChange("projectDetails", e.target.value)
+                  }
+                ></textarea>
+                {errors.projectDetails && (
+                  <span className="error">{errors.projectDetails}</span>
+                )}
               </label>
-              <button type="button" value="Submit">
+              <button type="button" onClick={handleSubmit}>
                 Submit
               </button>
             </form>

@@ -959,6 +959,7 @@ form.contact-right-form h3 {
 }
 form.contact-right-form label{
     width: 100%;
+    position: relative;
 }
 form.contact-right-form textarea {
     min-height: 140px;
@@ -969,10 +970,17 @@ form.contact-right-form textarea {
     width: 100%;
     padding: 14px 12px;
     border-radius: 4px;
-    margin-bottom: 14px;
+    margin-bottom: 26px;
     border: 1px solid #DDDDDD;
     font-size: 14px;
     color: #9B9B9B;
+}
+form.contact-right-form label span.error {
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    font-size: 12px;
+    color: #ff0000;
 }
 form.contact-right-form button {
     background-color: #26C6DA;
@@ -983,6 +991,22 @@ form.contact-right-form button {
     color: #fff;
     transition: 0.3s ease-in-out 0s;
     position: relative;  
+}
+
+.react-tel-input {
+    font-family: '__Inter_0ef218';
+}
+.react-tel-input input.form-control {
+    width: 100%;
+    height: auto;
+    line-height: normal;
+    margin-bottom: 25px !important;
+    border: 1px solid #DDDDDD;
+    position: relative;
+}   
+.react-tel-input .flag-dropdown {
+    background-color: transparent;
+    border: 0px;
 }
 .contact-sub.left h2 {
     font-size: 80px;
