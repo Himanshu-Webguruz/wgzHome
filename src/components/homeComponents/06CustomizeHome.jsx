@@ -30,6 +30,9 @@ const customizeContent = [
   { Icon: Travel, title: "Travel" },
   { Icon: Entertainment, title: "Entertainment" },
   { Icon: Entertainment, title: "Entertainment" },
+  { Icon: Entertainment, title: "Entertainment" },
+  { Icon: Entertainment, title: "Entertainment" },
+  { Icon: Entertainment, title: "Entertainment" },
 ];
 
 const CustomizeHome = () => {
