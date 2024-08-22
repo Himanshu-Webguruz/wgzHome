@@ -1,6 +1,5 @@
-"use client"
+"use client";
 import React, { useEffect, useRef } from "react";
-// import logo from '/images/header-logo.png';
 
 const Webguruzwe = () => {
   const container = useRef(null);
@@ -12,14 +11,18 @@ const Webguruzwe = () => {
   let easedScrollProgress = 0;
 
   useEffect(() => {
-    requestAnimationFrame(animate);
+    if (container.current && stickyMask.current) {
+      requestAnimationFrame(animate);
+    }
   }, []);
 
   const animate = () => {
-    const maskSizeProgress = targetMaskSize * getScrollProgress();
-    stickyMask.current.style.webkitMaskSize =
-      (initialMaskSize + maskSizeProgress) * 100 + "%";
-    requestAnimationFrame(animate);
+    if (stickyMask.current && container.current) {
+      const maskSizeProgress = targetMaskSize * getScrollProgress();
+      stickyMask.current.style.webkitMaskSize =
+        (initialMaskSize + maskSizeProgress) * 100 + "%";
+      requestAnimationFrame(animate);
+    }
   };
 
   const getScrollProgress = () => {
