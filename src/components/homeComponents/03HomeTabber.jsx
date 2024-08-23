@@ -44,7 +44,12 @@ const HomeTab = () => {
                         href={tab.link.href}
                         aria-label="Tabber links"
                       >
-                        {tab.link.text} <FontAwesomeIcon icon={faArrowRight} />
+                        {tab.link.text}{" "}
+                        <FontAwesomeIcon
+                          icon={faArrowRight}
+                          role="img"
+                          aria-label="Arrow Right"
+                        />
                       </Link>
                     </div>
                     <div className="image">

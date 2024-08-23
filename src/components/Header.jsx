@@ -44,9 +44,9 @@ const Header = () => {
       </section>
       <nav className="navbar navbar-expand-lg navigation-main">
         <div className="container">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" href="#">
             <Image src={logo} alt="logo" />
-          </a>
+          </Link>
           <button
             className="navbar-toggler"
             type="button"

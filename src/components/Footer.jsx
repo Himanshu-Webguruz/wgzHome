@@ -21,19 +21,19 @@ const Footer = () => {
             <h5>About</h5>
             <ul>
               <li>
-                <Link href="/">Our company</Link>
+                <Link href="#">Our company</Link>
               </li>
               <li>
-                <Link href="/">Core Team</Link>
+                <Link href="#">Core Team</Link>
               </li>
               <li>
-                <Link href="/">Career</Link>
+                <Link href="#">Career</Link>
               </li>
               <li>
-                <Link href="/">CSR</Link>
+                <Link href="#">CSR</Link>
               </li>
               <li>
-                <Link href="/">How We Work</Link>
+                <Link href="#">How We Work</Link>
               </li>
             </ul>
           </div>
@@ -41,19 +41,19 @@ const Footer = () => {
             <h5>Services</h5>
             <ul>
               <li>
-                <Link href="/">Web Design</Link>
+                <Link href="#">Web Design</Link>
               </li>
               <li>
-                <Link href="/">Web Development</Link>
+                <Link href="#">Web Development</Link>
               </li>
               <li>
-                <Link href="/">CMS Development</Link>
+                <Link href="#">CMS Development</Link>
               </li>
               <li>
-                <Link href="/">Digital Marketing</Link>
+                <Link href="#">Digital Marketing</Link>
               </li>
               <li>
-                <Link href="/">It Services</Link>
+                <Link href="#">It Services</Link>
               </li>
             </ul>
           </div>
@@ -61,19 +61,19 @@ const Footer = () => {
             <h5>Technologies</h5>
             <ul>
               <li>
-                <Link href="/">Blockchain</Link>
+                <Link href="#">Blockchain</Link>
               </li>
               <li>
-                <Link href="/">Artificial Intelligence</Link>
+                <Link href="#">Artificial Intelligence</Link>
               </li>
               <li>
-                <Link href="/">AR and VR</Link>
+                <Link href="#">AR and VR</Link>
               </li>
               <li>
-                <Link href="/">Cloud Computing</Link>
+                <Link href="#">Cloud Computing</Link>
               </li>
               <li>
-                <Link href="/">Internet of Things</Link>
+                <Link href="#">Internet of Things</Link>
               </li>
             </ul>
           </div>
@@ -81,39 +81,19 @@ const Footer = () => {
             <h5>Industries</h5>
             <ul>
               <li>
-                <Link href="/">Our company</Link>
+                <Link href="#">Our company</Link>
               </li>
               <li>
-                <Link href="/">Core Team</Link>
+                <Link href="#">Core Team</Link>
               </li>
               <li>
-                <Link href="/">Career</Link>
+                <Link href="#">Career</Link>
               </li>
               <li>
-                <Link href="/">CSR</Link>
+                <Link href="#">CSR</Link>
               </li>
               <li>
-                <Link href="/">How We Work</Link>
-              </li>
-            </ul>
-          </div>
-          <div className="col-sm-2 col-xs-12 footer-sub">
-            <h5>About</h5>
-            <ul>
-              <li>
-                <Link href="/">Our company</Link>
-              </li>
-              <li>
-                <Link href="/">Core Team</Link>
-              </li>
-              <li>
-                <Link href="/">Career</Link>
-              </li>
-              <li>
-                <Link href="/">CSR</Link>
-              </li>
-              <li>
-                <Link href="/">How We Work</Link>
+                <Link href="#">How We Work</Link>
               </li>
             </ul>
           </div>
@@ -121,19 +101,39 @@ const Footer = () => {
             <h5>About</h5>
             <ul>
               <li>
-                <Link href="/">Our company</Link>
+                <Link href="#">Our company</Link>
               </li>
               <li>
-                <Link href="/">Core Team</Link>
+                <Link href="#">Core Team</Link>
               </li>
               <li>
-                <Link href="/">Career</Link>
+                <Link href="#">Career</Link>
               </li>
               <li>
-                <Link href="/">CSR</Link>
+                <Link href="#">CSR</Link>
               </li>
               <li>
-                <Link href="/">How We Work</Link>
+                <Link href="#">How We Work</Link>
+              </li>
+            </ul>
+          </div>
+          <div className="col-sm-2 col-xs-12 footer-sub">
+            <h5>About</h5>
+            <ul>
+              <li>
+                <Link href="#">Our company</Link>
+              </li>
+              <li>
+                <Link href="#">Core Team</Link>
+              </li>
+              <li>
+                <Link href="#">Career</Link>
+              </li>
+              <li>
+                <Link href="#">CSR</Link>
+              </li>
+              <li>
+                <Link href="#">How We Work</Link>
               </li>
             </ul>
           </div>
@@ -151,7 +151,12 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Visit our Facebook page"
                 >
-                  <FontAwesomeIcon icon={faFacebook} height={20} />
+                  <FontAwesomeIcon
+                    icon={faFacebook}
+                    height={20}
+                    role="image"
+                    aria-label="Facebook"
+                  />
                 </a>
               </li>
               <li className="px-2">
@@ -161,7 +166,12 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Visit our Twitter profile"
                 >
-                  <FontAwesomeIcon icon={faXTwitter} height={20} />
+                  <FontAwesomeIcon
+                    icon={faXTwitter}
+                    height={20}
+                    role="image"
+                    aria-label="Twitter"
+                  />
                 </a>
               </li>
               <li className="px-2">
@@ -171,7 +181,12 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Visit our LinkedIn page"
                 >
-                  <FontAwesomeIcon icon={faLinkedin} height={20} />
+                  <FontAwesomeIcon
+                    icon={faLinkedin}
+                    height={20}
+                    role="image"
+                    aria-label="LinkedIn"
+                  />
                 </a>
               </li>
               <li className="px-2">
@@ -181,7 +196,12 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Visit our Instagram page"
                 >
-                  <FontAwesomeIcon icon={faInstagram} height={20} />
+                  <FontAwesomeIcon
+                    icon={faInstagram}
+                    height={20}
+                    role="image"
+                    aria-label="Instagram"
+                  />
                 </a>
               </li>
               <li className="px-2">
@@ -191,7 +211,12 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Visit our Youtube channel"
                 >
-                  <FontAwesomeIcon icon={faYoutube} height={20} />
+                  <FontAwesomeIcon
+                    icon={faYoutube}
+                    height={20}
+                    role="image"
+                    aria-label="Youtube"
+                  />
                 </a>
               </li>
               <li className="px-2">
@@ -201,7 +226,12 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   aria-label="Visit our Pinterest page"
                 >
-                  <FontAwesomeIcon icon={faPinterest} height={20} />
+                  <FontAwesomeIcon
+                    icon={faPinterest}
+                    height={20}
+                    role="image"
+                    aria-label="Pinterest"
+                  />
                 </a>
               </li>
             </ul>
@@ -213,7 +243,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="row copyright-btm" >
+        <div className="row copyright-btm">
           <div className="col-sm-7 col-xs-12 copyright">
             <p>
               Copyright @ 2024 Webguruz Technologies Private Limited. || All
@@ -223,13 +253,13 @@ const Footer = () => {
           <div className="col-sm-5 col-xs-12 right-privacy">
             <ul className="d-flex align-items-center justify-content-end">
               <li>
-                <Link href="/">Privacy Policy</Link>
+                <Link href="#">Privacy Policy</Link>
               </li>
               <li>
-                <Link href="/">Term & Condition</Link>
+                <Link href="#">Term & Condition</Link>
               </li>
               <li>
-                <Link href="/">SiteMap</Link>
+                <Link href="#">SiteMap</Link>
               </li>
             </ul>
           </div>

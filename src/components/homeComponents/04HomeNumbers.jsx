@@ -109,7 +109,12 @@ const HomeNumbers = () => {
                 <h3>{card.percentage}</h3>
                 <Link className="btn-link about--btn" href="/">
                   {card.anchor}
-                  <FontAwesomeIcon icon={faArrowRight} className="ps-1" />
+                  <FontAwesomeIcon
+                    icon={faArrowRight}
+                    className="ps-1"
+                    role="image"
+                    aria-label="Arrow Right"
+                  />
                 </Link>
               </div>
             </div>

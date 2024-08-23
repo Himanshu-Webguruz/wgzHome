@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/style.css";
-
+import Link from "next/link";
+import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 const Contact = () => {
   const initialFormData = {
     name: "",
@@ -69,31 +70,26 @@ const Contact = () => {
               nunc feugiat, malesuada sapien a, aliquet diam. Vivamus ex nisi,
               pharetra nec ultricie.
             </p>
-            <a href="/" className="partner-btn about--btn">
+            <Link href="/" className="partner-btn about--btn">
               Become a Partner
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                data-prefix="fas"
-                data-icon="arrow-right"
-                className="svg-inline--fa fa-arrow-right ps-1"
+              <FontAwesomeIcon
+                icon={faArrowRight}
                 role="img"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 448 512"
-              >
-                <path
-                  fill="currentColor"
-                  d="M438.6 278.6c12.5-12.5 12.5-32.8 0-45.3l-160-160c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L338.8 224 32 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l306.7 0L233.4 393.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0l160-160z"
-                ></path>
-              </svg>
-            </a>
+                aria-label="Arrow Right"
+              />
+            </Link>
             <div className="contact-info">
               <h4>Contact Info:</h4>
               <div className="row">
                 <div className="col-sm-6 col-xs-12">
                   <div className="contact-info-sub">
                     <div className="icon">
-                      <FontAwesomeIcon icon={faPhone} className="ps-1" />
+                      <FontAwesomeIcon
+                        icon={faPhone}
+                        className="ps-1"
+                        role="image"
+                        aria-label="Phone Number"
+                      />
                     </div>
                     <div className="content">
                       <p>Sales - (+91) 730 700 1777</p>
@@ -104,7 +100,12 @@ const Contact = () => {
                 <div className="col-sm-6 col-xs-12">
                   <div className="contact-info-sub">
                     <div className="icon">
-                      <FontAwesomeIcon icon={faEnvelope} className="ps-1" />
+                      <FontAwesomeIcon
+                        icon={faEnvelope}
+                        className="ps-1"
+                        role="image"
+                        aria-label="Envelope"
+                      />
                     </div>
                     <div className="content">
                       <p>Sales - provider@webguruz.in</p>
