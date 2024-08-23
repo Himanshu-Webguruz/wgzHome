@@ -1,5 +1,6 @@
 "use client";
 import React, { useState, useRef } from "react";
+import validator from "validator";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link";
@@ -10,49 +11,30 @@ const HomeNumbers = () => {
   const [errors, setErrors] = useState({ website: "" });
   const websiteRef = useRef(null);
 
-  // Domains to validate
-  const hasValidDomain =
-    /\.(com|net|org|in|edu|gov|mil|int|io|co|us|uk|de|jp|fr|au|br|cn|es|it|nl|ru|se|no|fi|dk|ch|at|be|pt|cz|gr|tr|il|ar|mx|pl|kr|za|nz|ir|hk|sg|my|id|th|tw|vn|ph|eg|pk|sa|ua|bd|ve|ma|ke|tz|ug|sd|dz|ly|mu|zm|zw|ls|sz|bw|na|bi|gw|er|dj|so|km|mg|sc|mz|mw|et|rw|ss|cg|cd|st|tg|ne|gn|bj|td|tg|bf|ng|tg|gh|cm|cf|gq|ao|ml|ga|bj|sn|cv|gm|lr|sl|ci)$/i;
-
-  const validateWebsite = (url) => {
-    const pattern = new RegExp(
-      "^(https?:\\/\\/)?" + // protocol
-        "((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.?)+[a-z]{2,}|" + // domain name
-        "((\\d{1,3}\\.){3}\\d{1,3}))" + // OR ip (v4) address
-        "(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*" + // port and path
-        "(\\?[;&a-z\\d%_.~+=-]*)?" + // query string
-        "(\\#[-a-z\\d_]*)?$",
-      "i"
-    ); // fragment locator
-    return !!pattern.test(url);
-  };
-
   const handleWebsiteChange = (e) => {
     setWebsite(e.target.value);
   };
 
-  const handleWebsiteBlur = () => {
-    const trimmedWebsite = website.trim();
-    // Check if website is valid and has a valid domain
-    if (hasValidDomain.test(trimmedWebsite)) {
-      if (
-        !trimmedWebsite.startsWith("http://") &&
-        !trimmedWebsite.startsWith("https://")
-      ) {
-        setWebsite("http://" + trimmedWebsite);
-      }
-    } else {
-      setErrors((prevErrors) => ({
-        ...prevErrors,
-        website: "Enter a valid URL",
-      }));
-      if (websiteRef.current) websiteRef.current.focus();
-    }
-  };
-
   const handleButtonClick = (e) => {
     e.preventDefault();
-    const websiteError = !validateWebsite(website) ? "Enter a valid URL" : "";
+    const trimmedWebsite = website.trim();
+    let formattedWebsite = trimmedWebsite;
+    let websiteError = "";
+
+    // Ensure URL starts with "http://"
+    if (
+      !formattedWebsite.startsWith("http://") &&
+      !formattedWebsite.startsWith("https://")
+    ) {
+      formattedWebsite = "http://" + formattedWebsite;
+    }
+
+    // Check if the website contains invalid characters like "@"
+    if (formattedWebsite.includes("@")) {
+      websiteError = "Enter a valid URL";
+    } else if (!validator.isURL(formattedWebsite, { require_protocol: true })) {
+      websiteError = "Enter a valid URL";
+    }
 
     if (websiteError) {
       setErrors({ website: websiteError });
@@ -60,9 +42,12 @@ const HomeNumbers = () => {
       return;
     }
 
-    // If valid, console the website value
-    console.log(`Website entered: ${website}`);
-    setWebsite("");
+    // Clear errors if the URL is valid
+    setErrors({ website: "" });
+
+    // If valid, console the website value and clear the input field
+    console.log(`Website entered: ${formattedWebsite}`);
+    setWebsite(""); // Clear the input field only if the URL is valid
   };
 
   return (
@@ -78,24 +63,28 @@ const HomeNumbers = () => {
               with impactful results and wows them with stellar customer
               service.
             </p>
-            <form className="website-label btn-main">
+            <form
+              className="website-label btn-main"
+              onSubmit={handleButtonClick}
+            >
               <input
                 type="text"
                 placeholder="Enter Your Website"
                 value={website}
                 onChange={handleWebsiteChange}
-                onBlur={handleWebsiteBlur}
                 ref={websiteRef}
               />
               {errors.website && (
                 <p style={{ color: "red" }}>{errors.website}</p>
               )}
-              <button
-                type="button"
-                value="Get a proposal"
-                onClick={handleButtonClick}
-              >
+              <button type="submit" value="Get a proposal">
                 Get a proposal
+                <FontAwesomeIcon
+                  icon={faArrowRight}
+                  className="ps-1"
+                  role="image"
+                  aria-label="Arrow Right"
+                />
               </button>
             </form>
           </div>
