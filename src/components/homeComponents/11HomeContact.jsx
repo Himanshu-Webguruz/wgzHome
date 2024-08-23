@@ -92,8 +92,14 @@ const Contact = () => {
                       />
                     </div>
                     <div className="content">
-                      <p>Sales - (+91) 730 700 1777</p>
-                      <p>Jobs - (+91) 959 201 6444</p>
+                      <p>
+                        Sales -{" "}
+                        <a href="tel:730 700 1777">(+91) 730 700 1777</a>
+                      </p>
+                      <p>
+                        Jobs -{" "}
+                        <a href="tel:(+91) 959 201 6444">(+91) 959 201 6444</a>{" "}
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -108,8 +114,28 @@ const Contact = () => {
                       />
                     </div>
                     <div className="content">
-                      <p>Sales - provider@webguruz.in</p>
-                      <p>Jobs - careers@webguruz.in</p>
+                      <p>
+                        Sales -{" "}
+                        <a
+                          href="mailto:provider@webguruz.in"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {" "}
+                          provider@webguruz.in
+                        </a>
+                      </p>
+                      <p>
+                        Jobs -
+                        <a
+                          href="mailto:careers@webguruz.in"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {" "}
+                          careers@webguruz.in
+                        </a>
+                      </p>
                     </div>
                   </div>
                 </div>

@@ -238,7 +238,14 @@ const Footer = () => {
           </div>
           <div className="col-sm-4 col-xs-12 footer-bottom right">
             <div className="bottom-right-img d-flex align-items-center">
-              <Image src={dcma} alt="dcma" />
+              <a
+                href="https://www.dmca.com/Protection/Status.aspx?ID=2af704c9-ad37-4670-a717-28eb4c89e78b&refurl=https://webguruz.in/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="DMCA Protected"
+              >
+                <Image src={dcma} alt="dcma" />
+              </a>
               <p className="px-2 mb-0">Mobile App & Web Development Company</p>
             </div>
           </div>
